@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Загальні стилі */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #1E1E1E;
+    color: #333;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+h1, h2, h3 {
+    margin: 10px 0;
+}
+
+
+/* Навігація */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
+    backdrop-filter: blur(50px); /* Эффект размытия фона */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+nav a.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+nav ul li a.cta {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+/* Дополнительные эффекты при наведении */
+nav ul li a:hover {
+    color: #1E1E1E;
+}
+nav ul li a.cta:hover {
+    background-color: #1E1E1E;
+}
+
+/* Отступ для контента, чтобы он не перекрывался навигацией */
+body {
+    padding-top: 80px; /* Этот отступ можно настроить в зависимости от высоты вашего хедера */
+}
+
+/* Hero Section */
+.hero {
+    /* background: linear-gradient(to right, #1E1E1E, #353232); */
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    width: 100%; 
+    height: 100%;
+}
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.hero a.cta {
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #1E1E1E;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Опис Продукту */
+.about {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+.about p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/*program*/
+.program {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #fff;
+}
+
+/* карточка */
+.speakers {
+  display: flex;
+  justify-content: center; /* Центрирование карточек по горизонтали */
+  gap: 20px; /* Отступ между карточками */
+  padding: 20px; /* Дополнительные отступы внутри контейнера */
+}
+
+.speaker-card-front, .speaker-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Прижимает содержимое к нижней части карточки */
+  align-items: center; /* Центрирует содержимое по горизонтали */
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1rem;
+  padding: 5px; /* Отступы внутри карточки */
+  box-sizing: border-box; /* Учитывает padding в общей ширине и высоте */
+}
+
+.speaker-card-front {
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+}
+
+.speaker-card-back {
+  background: linear-gradient(120deg, rgb(176, 176, 176) 30%, rgb(116, 116, 116) 88%, 
+     rgb(223, 223, 223) 40%, rgb(220, 220, 220) 78%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.info {
+  font-size: 1em;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1em;
+  font-weight: 500;
+  text-align: center;
+  margin: 7px 0 0 0; /* Отступ сверху, чтобы отдалить от первого текста */
+  padding: 3px;
+  border: 1.5px solid white; /* Белая обводка вокруг текста */
+  border-radius: 0.5rem; /* Закругленные углы обводки */
+  color: rgb(255, 255, 255);
+}
+
+
+.speaker-card {
+  background-color: transparent; /* Прозрачный фон для карточки */
+  width: 290px; /* Ширина карточки */
+  height: 354px; /* Высота карточки */
+  perspective: 1000px; /* Устанавливает глубину перспективы для 3D-трансформаций */
+  font-family: sans-serif; /* Задает шрифт для текста внутри карточки */
+}
+
+.speaker-card-inner {
+  position: relative; /* Задает относительное позиционирование для внутреннего элемента */
+  width: 90%; /* Ширина внутреннего элемента равна ширине карточки */
+  height: 90%; /* Высота внутреннего элемента равна высоте карточки */
+  text-align: center; /* Центрирует текст внутри карточки */
+  transition: transform 0.8s; /* Анимация трансформации длится 0.8 секунды */
+  transform-style: preserve-3d; /* Сохраняет 3D-пространство для дочерних элементов */
+}
+
+.speaker-card:hover .speaker-card-inner {
+  transform: rotateY(180deg); /* При наведении карточка поворачивается на 180 градусов по оси Y */
+}
+
+.speaker-card-front, .speaker-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2); /* Тень вокруг карточки */
+  position: absolute; /* Абсолютное позиционирование внутри родительского элемента */
+  display: flex; /* Используется flexbox для расположения контента внутри карточки */
+  flex-direction: column; /* Элементы внутри карточки располагаются вертикально */
+  justify-content: center; /* Центрирует содержимое карточки по вертикали */
+  width: 100%; /* Ширина элемента равна ширине карточки */
+  height: 100%; /* Высота элемента равна высоте карточки */
+  -webkit-backface-visibility: hidden; /* Скрывает заднюю сторону при вращении для WebKit браузеров */
+  backface-visibility: hidden; /* Скрывает заднюю сторону при вращении */
+  border: 1px solid rgb(255, 255, 255); /* Белая рамка вокруг карточки */
+  border-radius: 1rem; /* Закругляет углы карточки */
+}
+
+.speaker-card-front {
+  background-size: cover; /* Изображение полностью охватывает переднюю сторону карточки */
+  background-position: center; /* Изображение центрируется по передней стороне карточки */
+  color: rgb(255, 255, 255); /* Белый цвет текста на передней стороне карточки */
+}
+
+.speaker-card-back {
+  background: linear-gradient(120deg, rgb(176, 176, 176) 30%, rgb(116, 116, 116) 88%,
+     rgb(223, 223, 223) 40%, rgb(220, 220, 220) 78%); /* Градиентный фон для задней стороны карточки */
+  color: white; /* Белый цвет текста на задней стороне карточки */
+  transform: rotateY(180deg); /* Карточка на задней стороне повёрнута на 180 градусов */
+}
+
+/* Відгуки */
+.testimonials {
+    padding: 60px 0;
+    background-color: #1E1E1E;
+    color: #fff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-bottom: 40px;
+}
+
+.testimonial-item {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+/* Процес Навчання */
+.faq {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.faq ol {
+    list-style: decimal;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+/* Реєстрація */
+.signup {
+    padding: 60px 0;
+    background-color: #2d2828;
+    color: #fff;
+    text-align: center;
+}
+
+.signup h2 {
+    margin-bottom: 20px;
+}
+
+.signup a.cta {
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #1E1E1E;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* From Uiverse.io by david-mohseni */ 
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+
+
+/* Футер */
+footer {
+    padding: 20px 0;
+    background-color: #1f1d1d;
+    color: #fff;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(30, 30, 30, 0.9);
+        padding: 20px;
+        display: none; /* Меню скрыто по умолчанию */
+        position: fixed;
+        top: 60px; /* Задаем смещение для фиксации */
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
+
+    .menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none; /* Скрываем навигацию по умолчанию */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #1E1E1E;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex; /* Показываем навигацию при активном классе */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+    nav ul.active {
+        display: flex; /* Показать меню при активном классе */
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .speakers {
+        flex-direction: column; /* Колонки переходят в один ряд */
+        align-items: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .testimonials h2 {
+        font-size: 28px;
+    }
+
+    .testimonial-item {
+        font-size: 16px;
+    }
+
+    .process ol {
+        font-size: 16px;
+    }
+
+    .signup h2 {
+        font-size: 28px;
+    }
+}
+.speaker-card:hover .speaker-card-inner {
+  transform: rotateY(180deg); /* При наведении карточка поворачивается на 180 градусов по оси Y */
+}
