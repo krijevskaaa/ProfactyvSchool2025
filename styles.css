@@ -168,7 +168,17 @@ body {
   font-weight: 900;
   text-align: center;
   margin: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-shadow: 0 0 5px #000000,
+               0 0 10px #000000,
+               0 0 20px #000000;
 }
+
+
 
 .info {
   font-size: 1em;
